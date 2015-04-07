@@ -99,8 +99,6 @@ $(function(){
 
     $("#difference").text("diffrrence: "+difference);
     $("#Ava").text("Ava: "+Ava);
-    $("#difference").css("color","#00ddc5");
-    $("#Ava").css("color","#00c5dd");
 
     if(timeDomain === true){
       setTimeout(render, interval);//波形表示のとき?
