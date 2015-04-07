@@ -1,0 +1,8 @@
+body{
+	background-color:black;
+}
+
+#visualizer{
+	overflow: auto;
+	padding:10px;
+}
