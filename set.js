@@ -1,13 +1,15 @@
 $(function(){
+  var $file = $("<input/>").attr("id","file").attr("type","file");
+  var $difference = $("<div/>").attr("id","difference");
+  var $Ava = $("<div/>").attr("id","Ava");
+  $("body").append($file).append($difference).append($Ava);
   var source, animationId;
   var audioContext = new AudioContext;
   var fileReader   = new FileReader;
 
   var analyser = audioContext.createAnalyser();
-  analyser.fftSize = 2048;
+  analyser.fftSize = 256;
   analyser.smoothingTimeConstant = 0.1;//defoult:0.8
-  //analyser.minDecibels = ;//defoult:
-  //analyser.maxDecibels = ;
   analyser.connect(audioContext.destination);
 
   var canvas        = $("<canvas/>")[0];//$("#id")[0] === document.getElementById('id')
@@ -35,6 +37,7 @@ $(function(){
   };
 　
   $("#file").on("change",function(e){
+    console.log("onchange");
     fileReader.readAsArrayBuffer(e.target.files[0]);
   });
 　
@@ -48,7 +51,7 @@ $(function(){
   var _g = 'aa';
   var _b = 'e1';
 
-  var timeDomain = true;//表示切り替え
+  var timeDomain = false;//表示切り替え
 
   render = function(){
 
