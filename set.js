@@ -8,8 +8,8 @@ $(function(){
   var fileReader   = new FileReader;
 
   var analyser = audioContext.createAnalyser();
-  analyser.fftSize = 256;
-  analyser.smoothingTimeConstant = 0.1;//defoult:0.8
+  analyser.fftSize = 512;
+  analyser.smoothingTimeConstant = 0.9;//defoult:0.8
   analyser.connect(audioContext.destination);
 
   var canvas        = $("<canvas/>")[0];//$("#id")[0] === document.getElementById('id')
@@ -29,6 +29,7 @@ $(function(){
 
       source.buffer = buffer;
       source.connect(analyser);
+
       source.start(0);
 　
       animationId = requestAnimationFrame(render);
@@ -90,8 +91,8 @@ $(function(){
       canvasContext.clearRect(i, height-BarHeight-300+1,1,spectrums[i]);//波形表示のとき
       var interval = $(input).val();//波形表示?
     }else{  
-      canvasContext.fillRect(x, height-BarHeight-300, 1, BarHeight);
-      canvasContext.fillRect(x, height-300, 1, BarHeight);
+      canvasContext.fillRect(x, height/2-BarHeight-100, 1, BarHeight);
+      canvasContext.fillRect(x, height/2-100, 1, BarHeight);
     }
 
     }//for
@@ -107,8 +108,8 @@ $(function(){
       setTimeout(render, interval);//波形表示のとき?
       $("#Ava").text("interval: "+interval);//波形表示のとき?
     }else{
-      en(difference,'#00ddc5');
-      en2(Ava,'#00c5dd');
+      //en(difference,'#00ddc5');
+      //en2(Ava,'#00c5dd');
       animationId = requestAnimationFrame(render);
     }
 
