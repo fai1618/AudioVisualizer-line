@@ -86,7 +86,7 @@ var audioVisualize = function(){
                 preAve = this.ave;
 
                 if(ave_diffShowJudge){
-                    $("#difference").text("diffrrence: " + this.difference);
+                    $("#difference").text("difference: " + this.difference);
                     $("#Ave").text("Ave: " + this.ave);
                 }
                 if(this.arduinoJudge){
