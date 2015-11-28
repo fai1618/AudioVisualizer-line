@@ -1,8 +1,18 @@
 body{
 	background-color:black;
+	color:white;
+	padding: 0px;
+	margin:0px;
 }
 
 #visualizer{
 	overflow: auto;
 	padding:10px;
+}
+
+#difference{
+	color:#00ddc5;
+}
+#Ava{
+	color:#00c5dd;
 }
